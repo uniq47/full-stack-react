@@ -1,8 +1,8 @@
-import illustration_box from "./images/illustration-box-desktop.svg";
-import illustration_woman_desktop from "./images/illustration-woman-online-desktop.svg";
-import illustration_woman_mobile from "./images/illustration-woman-online-mobile.svg";
-
-
+import illustration_box from "../images/illustration-box-desktop.svg";
+import illustration_woman_desktop from "../images/illustration-woman-online-desktop.svg";
+import illustration_woman_mobile from "../images/illustration-woman-online-mobile.svg";
+// .. to go one step back in the directory tree
+import Accordion  from "./Accordion";
 const questionAnswers = [
     {
       question: "How many team members can I invite?",
@@ -51,6 +51,8 @@ const App = () => {
 
           <div>
             <h1> FAQ</h1>
+            {/* writing Accordion here is like writting <div>Accordion</div> */}
+            <Accordion/>
             <dl>
               <div>
                 <dt>
