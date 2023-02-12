@@ -1,0 +1,26 @@
+//var can use used using $varName
+
+$red: red;
+
+
+html{box-sizing: border-box; }
+*, 
+*::beore, // with in the class, we want to insert before and after <div>Hello</div> thenwe can write before and after
+*::after{
+    box-sizing: inherit;
+}
+// we are getting red from the var
+body{
+    background-color: $red;
+}
+
+.illustration{
+    background-color: blue;
+    //nesting using &
+    //own name 
+
+
+    &_box{
+        background-color: green;
+    }
+}
