@@ -53,7 +53,6 @@ const App = () => {
           />
         </div>
         <div>
-          {/* props */}
           <Accordion questionAnswers ={questionAnswers} />
         </div>
       </article>

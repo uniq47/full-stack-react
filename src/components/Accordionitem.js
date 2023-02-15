@@ -1,33 +1,34 @@
+// we got myClick as a props from Accordion.js
+//function Accordionitem({qa: {question,answer}, myClick}) {
+function Accordionitem({ qa, myClick }) {
+  //// myClick();  this will not call it by itself as it's a callback function and we are directly calling it in
+  // Accordionitem.js so it will be called depending on the interaction with the user we can attach it in div
+  //and it will be called by itself and
 
-// destructuring the props we can do this {question } but we cant 
-// as WE NEED TO , WE CAN WRITE ANY NAME WE CAN WRITE ABCDEF INSTED OF QA
-//WE WRITE IT PROPS, PROPS CONTAINS THE QUESTION AND ANSWER 
-// so first we destructure the qa where it will contain the question ans answers
-function Accordionitem({qa: {question,answer}}) {
-  //const{question,answer} = qa;
-// so  we destructured the qa and we got the question and answer
-// we can do nexted destructuring like this const{question,answer} = qa;
-//  className ="faq__desc" we apply css with inthe click of the question button the answer should be shown
+  //// this will not call it by itself as it's a callback function and we are directly calling it in
+  // Accordionitem.js so it will be called depending on the interaction with the user, we can attac it some were in the dic ,
+  // we hav eto write exact event here as now we are going to call it in the we can sue function , it will be activated,
+  // we have a fucntion comming from, her ewe are not writing the function ourself as we are calling it from Accordionitem.js
+  // there is a fucntion comming from Accordion.js and myclick we wwant to cliuck that funciton on click so we apply that onClick instead of the fucntion we had
   return (
-    <div className="faq__question">
+    //we want to applu that fucnion on CLick insdteasd of that one we had here
+    // onclick ={()={}} we dont have to write it our self as myclick is comming from Accordion.js and we are calling it from Accordionitem.js , onclick={myClick}
+    <div className="faq__question" onClick={myClick}>
+      {/* we can still use fucntion here and clicked here and when we click itwill be activated here , 
+      we are / this will not call it by itself as it's a callback function and we are directly calling it in 
+              // Accordionitem.js so it will be called depending on the interaction with the user, we can attac it some were in the dic , 
+              // we hav eto write exact event here as now we are going to call it in the we can sue function , it will be activated,
+              // we have a fucntion comming from, her ewe are not writing the function ourself as we are calling it from Accordionitem.js
+              // there is a fucntion comming from Accordion.js and myclick we wwant to cliuck that funciton on click so we apply that onClick instead of the fucntion we had 
+  return ( //we want to applu that fucnion on CLick insdteasd of that one we had here  */}
       <dt>
-        <button className ="faq__question-button"> {question}</button>
+        <button className="faq__question-button"> {qa.question}</button>
       </dt>
-      <dd >
-        <p className ="faq__descj">{answer}</p> 
+      <dd>
+        <p className="faq__descj">{qa.answer}</p>
       </dd>
     </div>
   );
 }
-// how to revieve the prop, in line number one we need to distructure the prop which is qa
-// we wont get hte questoin and answer here because we are not passing the props here
-// we need to pass the props here so , pass it from the pasrents
-// accordtion is the parent component of accordionitem so we need to pass the props from accordion to accordionitem
-//
+// prop drilling can be solved by context api, if is passing between greater then 3 then we should use context api
 export default Accordionitem;
-
-// Accordionitem.js goes inside Accordion.js and Accordion.js goes inside App.js
-///app.js goes into index.js
-// index.js goes into index.html
-
-// we are linking them componentssomehow and sending it to index.html
