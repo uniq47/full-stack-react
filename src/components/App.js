@@ -44,7 +44,7 @@ const App = () => {
           <img
             src={illustration_woman_desktop}
             alt="illustration with women"
-            className="illustration__women_dekstop"
+            className="illustration__woman-desktop"
           />
           <img
             src={illustration_woman_mobile}
@@ -53,8 +53,9 @@ const App = () => {
           />
         </div>
         <div>
-          {/* all questions into one component but the accordina cannot render the single componnet */}
+          {/* all questions into one component but the accordian cannot render the single componnet */}
           <Accordion questionAnswers ={questionAnswers} />
+          {/* here questionAnswers is the props that we got from App.js as a props and passing `questionAnswers` as a props to Accordian */}
         </div>
       </article>
     </main>
