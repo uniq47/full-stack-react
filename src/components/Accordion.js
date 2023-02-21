@@ -1,3 +1,4 @@
+import {useState} from "react";
 import Accordionitem from "./Accordionitem";
 //questionAnswers is the props that we got from App.js as a props
 function Accordion({ questionAnswers }) {
