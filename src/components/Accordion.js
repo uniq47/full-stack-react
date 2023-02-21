@@ -12,7 +12,7 @@ function Accordion({ questionAnswers }) {
         {questionAnswers.map((item, index) => {
           // when we click on the button then the index of the button will be stored in the activeItem
           // index is the index of the button that we clicked match with the index of the questionAnswers array then we will show the answer
-          const showDescription = index === activeItem ? "show-descrioption" : "";
+          const showDescription = index === activeItem ? "show-description" : "";
           //to detect if passed or not
           const ariaExpanded = index === activeItem ? true : false;
           //aria level  <span role - button so now the span will be a button
@@ -30,9 +30,9 @@ function Accordion({ questionAnswers }) {
               // }}
               // myClick={handleClick}
 
-              myClick={() => setActiveItem(index)}
+              onClick={() => setActiveItem(index)}
               index={index}
-              showDescripotion={showDescription}
+              showDescription={showDescription}
               ariaExpanded={ariaExpanded}
               fontBold={fontBold}
             />

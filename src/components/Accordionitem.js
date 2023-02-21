@@ -1,13 +1,34 @@
 // we got myClick as a props from Accordion.js
 //function Accordionitem({qa: {question,answer}, myClick}) {
-function Accordionitem({ qa, myClick,showDescription, ariaExpanded,fontBold, index }) {
+function Accordionitem({
+  qa,
+  onClick,
+  showDescription,
+  ariaExpanded,
+  fontBold,
+  index,
+  //button does not have a control feature so to bring the control feature we use aria-control arrtibute
+}) {
   return (
-    <div className="faq__question" onClick={myClick}>
+    <div className="faq__question" onClick={onClick}>
       <dt>
-        <button className="faq__question-button"> {qa.question}</button>
+        <button 
+          className={`faq__question-button ${fontBold}`}
+          aria-expanded={ariaExpanded}
+          data-qa="faq__question-button"
+          aria-control={`faq${index + 1}_desc`}
+        >
+          {qa.question}
+        </button>
       </dt>
       <dd>
-        <p className="showDescription">{qa.answer}</p>
+        <p
+          className={`faq__desc ${showDescription}`}
+          id={`faq${index + 1}_desc`}
+          data-qa="faq__desc"
+        >
+          {qa.answer}
+        </p>
       </dd>
     </div>
   );
