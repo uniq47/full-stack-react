@@ -30,5 +30,6 @@ function Accordionitem({ qa, myClick }) {
     </div>
   );
 }
+
 // prop drilling can be solved by context api, if is passing between greater then 3 then we should use context api
 export default Accordionitem;

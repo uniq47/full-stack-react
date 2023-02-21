@@ -53,6 +53,7 @@ const App = () => {
           />
         </div>
         <div>
+          {/* all questions into one component but the accordina cannot render the single componnet */}
           <Accordion questionAnswers ={questionAnswers} />
         </div>
       </article>

@@ -39,6 +39,16 @@ function Accordion({ questionAnswers }) {
           // onclikc is used in the div element in Accordionitem.js
           //
           return (
+            // so when we go in AccordinaItem component 
+            //single questoin and answer is one component and we are writing it 5 times
+            // as we are using map in questionanswers(array) and it will be called in the length of the index
+            //inside app.js we have 5 question and answer so it will be called 5 times
+            // who is helping us render that react component is another react component and it is accordian Item. 
+            // we are using map method and it is now passing each and every accordian component
+            // it is changing each and everytime but the prop form app is always an array of object.
+            // inside accordian component  item and key will aways change or qa will change. so we have 5 components
+            //key should be unique so react can identify ut and render it
+            // when we are rending multiple components form map methodd we have to pass  key as a props 
             <Accordionitem
               qa={item} // qa is item it is an object,
               key={index} // keu is index it is a numnber
