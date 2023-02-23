@@ -12,8 +12,10 @@ function Accordion({ questionAnswers }) {
         {/* we can write ? as when ther eis falsy value everythingahead will not 
         execute , it will check the status of questionAnswers
       , it will chekc if it is ture or false while rendering
-        if question answers is defined or if it is defined, then at that point do the rendering or else print no data  */}
-        {questionAnswers?.map((item, index) => {
+        if question answers is defined or if it is defined, then at that point do the rendering or else print no data 
+        if 20>30 is false then it will not print bye else hi
+         20>30? hi:bye*/}
+        {questionAnswers ? questionAnswers?.map((item, index) => {
           // when we click on the button then the index of the button will be stored in the activeItem
           // index is the index of the button that we clicked match with the index of the questionAnswers array then we will show the answer
           const showDescription =
@@ -36,7 +38,7 @@ function Accordion({ questionAnswers }) {
               fontBold={fontBold}
             />
           );
-        })}
+        }): <div class="loader"></div>}
       </dl>
     </div>
   );
