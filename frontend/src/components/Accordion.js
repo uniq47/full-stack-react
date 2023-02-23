@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Accordionitem from "./Accordionitem";
+import classes from "./Accordion.module.css";
 //questionAnswers is the props that we got from App.js as a props
 function Accordion({ questionAnswers }) {
   const [activeItem, setActiveItem] = useState(0);
@@ -38,7 +39,7 @@ function Accordion({ questionAnswers }) {
               fontBold={fontBold}
             />
           );
-        }): <div class="loader"></div>}
+        }): <div className={classes.loader}></div>}
       </dl>
     </div>
   );

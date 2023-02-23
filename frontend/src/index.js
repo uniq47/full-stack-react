@@ -4,6 +4,7 @@ import App from './components/App';
 import './main.scss'
 
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(<StrictMode><div><App/></div></StrictMode>);
 
 // const destination = document.getElementById('root');
