@@ -7,12 +7,14 @@ function Accordionitem({
   ariaExpanded,
   fontBold,
   index,
+
   //button does not have a control feature so to bring the control feature we use aria-control arrtibute
 }) {
+  console.log("accordionitem");
   return (
     <div className="faq__question" onClick={onClick}>
       <dt>
-        <button 
+        <button
           className={`faq__question-button ${fontBold}`}
           aria-expanded={ariaExpanded}
           data-qa="faq__question-button"
