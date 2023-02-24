@@ -2,6 +2,21 @@ import { useState } from "react";
 import Accordionitem from "./Accordionitem";
 // import styles from "./Accordion.module.css";
 import {Loader} from "../Loader";
+
+
+
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
+
+function LinearIndeterminate() {
+  return (
+    <Box sx={{ width: '100%' }}>
+      <LinearProgress />
+    </Box>
+  );
+}
+
+
 //questionAnswers is the props that we got from App.js as a props
 function Accordion({ questionAnswers }) {
   const [activeItem, setActiveItem] = useState(0);
@@ -35,7 +50,8 @@ function Accordion({ questionAnswers }) {
         ) : (
           // <div className={styles.loader}></div> we can use this but we will use the loader from the styles folder
           // we can use this anywhere 
-          <Loader border={"red"} borderTop={"blue"} />
+          // <Loader border={"red"} borderTop={"blue"} />
+          <LinearIndeterminate />
         )}
       </dl>
     </div>
