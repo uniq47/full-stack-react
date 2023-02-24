@@ -5,6 +5,7 @@ import illustration_woman_mobile from "../images/illustration-woman-online-mobil
 // .. to go one step back in the directory tree
 // import { Loader } from "../styles/Loader";
 import Accordion from "./Accordion";
+import { fetchdata } from "../services/fetchData";
 
 const App = () => {
   // we can have a variable one state to store the data cuz its chaing initial value wil benull
@@ -23,9 +24,27 @@ const App = () => {
   // we are fetching it fron the external url,  converted json to js object (.then(res => res.json)) , now we have our js object in data then(data => )
 
   useEffect(() => {
-    fetch("http://localhost:8000/questionAnswer")
-      .then((res) => res.json())
-      .then((data) => setQuestionAnswers(data));
+    // //res has a data so we directlry rwrite data nad tehn set quesetionAnswers with data
+    // fetchdata().then(data => setQuestionAnswers(data))
+    // we dont have to wirte function key word
+    //________________
+    // imidiate invoke function so we dont have to wirte function keyword, and inside the function we can directly await the fucntion
+    // we can directly provide it into the setQuestionAnswers function
+    // we want to await what ever the data commig(await fetchdata()) from the fetchdata function and set ot to the
+    // state updating fucntoi whihc is the questionAnswers, to invoke it we need to wrap it insdie a paranthesis
+    //   (async () => {
+    //     setQuestionAnswers(await fetchdata());
+    //   })();
+    // }, []);
+
+    (async () => {
+      try {
+        const data = await fetchdata();
+        setQuestionAnswers(data);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
   }, []);
   return (
     <main className="container">
